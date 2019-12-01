@@ -24,8 +24,9 @@
     2.  The only job of every worker is to fetch data from AWS SQS queue and insert it into mongodb. And keep repeating this task.
 
 
-Bucket name, AWS credentials, mongodb url etc. all of this can be changed from ecosystem.config.js file.
+Bucket name, AWS credentials, mongodb connection url etc. all of this can be changed from ecosystem.config.js file.
 Major difference between APP-1 and APP-2 is that APP-2 is decoupled with the help of SQS service.
 
-Producer-app generates the messages which are to be consume by the Consumer-app;
+Producer-app generates the messages which are to be consumed by the Consumer-app.
+
 So, if we run "pm2 start ecosystem.config.js --env staging|production", 2 independent applications will run.
